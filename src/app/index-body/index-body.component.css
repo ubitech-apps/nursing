@@ -1,0 +1,72 @@
+/* Styles for wrapping the search box */
+h1,h2, h3{
+  font-family: 'Droid Serif';
+}
+
+
+/* /////////// serach box css start //////////// */
+.search{
+      font-size: 3em;
+    line-height: 1.2em;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: .5em 0 .25em 0;
+}
+.main {
+    width: 50%;
+    margin: 20px auto;
+}
+.allfield{
+    width: 60%;
+    padding: 19px 15px;
+    box-sizing: border-box;
+}
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+.searchbox{
+    position: absolute;
+    z-index: 2;
+    padding: 18px;
+    /* width: 2px; */
+    margin-left: 5px;
+    background-color: #10147e;
+    border-color: 1px solid #10147e;
+
+}
+
+/* /////////// serach box css end //////////// */
+.triangle-2
+{
+    height: 0px;
+    width: 0px;
+    margin-left: 40rem;
+    border-left: 55px solid transparent;
+    border-right: 45px solid transparent;
+    border-top: 45px solid #7eacda87;
+}
+
+.mt-33{
+  color: #10147e;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    /* font-size: .9em; */
+      font-size: 16px;
+    font-weight: 600;
+    padding: 6px 30px 6px 0;
+    display: inline-flex;
+    
+}
