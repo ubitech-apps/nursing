@@ -19,6 +19,12 @@ h3 {
   margin: 20px auto;
 }
 .allfield {
+  letter-spacing: 3px;
+  font-weight: 500;
+  font-size: 15px;
+  /* font-size: 17px;  */
+  background-color: #ded9d9; 
+  color:#7b7b7b;
   width: 60%;
   padding: 19px 15px;
   box-sizing: border-box;
@@ -43,10 +49,10 @@ h3 {
 .searchbox {
   position: absolute;
   z-index: 2;
-  padding: 18px;
+  padding: 17px;
   /* width: 2px; */
   margin-left: 5px;
-  background-color: #10147e;
+  background-color: #336699;
   border-color: 1px solid #eeeef5;
 }
 
@@ -62,9 +68,11 @@ h3 {
 .triangle-2 {
   height: 0px;
   width: 0px;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 50px solid #7eacda87;
+border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #c2c2c2;
+
+
 }
 
 .mt-33 {
@@ -79,4 +87,78 @@ h3 {
 .card-headers {
   background-color: #10147e;
   padding: 3px;
+}
+.blues{
+    font-family: "Droid Serif", serif;
+    letter-spacing: 2px;
+    padding: 12px;
+    color:#c1c1c1 !important;
+    background-color: #123458;
+}
+.gery{
+  padding: 18px;
+  background-color:#c2c2c2;
+
+}
+.mtt-34{
+  font-family: "Droid Serif", serif;
+}
+.text-lights{
+  color:#afe1fc;
+}
+.side-border{
+  border-right: 3px solid #85a4c2;
+}
+.triangles{
+  margin-left: 47%; position: absolute;
+}
+@media only screen and (max-width:768px){
+.search {
+  font-size: 2em;
+  /* line-height: 1.2em;
+  font-weight: 500;
+  letter-spacing: -0.02em; */
+  /* margin: 0.5em 0 0.25em 0; */
+}
+.searchbox {
+  position: absolute;
+  z-index: 2;
+  padding: 7px;
+  /* width: 2px; */
+  margin-left: 5px;
+  background-color: #336699;
+  border-color: 1px solid #eeeef5;
+}
+.main {
+  width: 60%;
+  margin: 15px 55px;
+}
+.allfield {
+
+  padding: 12px 12px;
+  box-sizing: border-box;
+   letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 11px;
+  background-color: #ded9d9; 
+  color:#7b7b7b;
+  box-sizing: border-box
+}
+
+.blues{
+    font-family: "Droid Serif", serif;
+    letter-spacing: 1px;
+    padding: 11px;
+    color:#c1c1c1 !important;
+    background-color: #123458;
+}
+.triangles{
+  margin-left: 41%;
+}
+
+
+
+
+
+
 }

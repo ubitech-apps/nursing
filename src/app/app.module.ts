@@ -8,6 +8,20 @@ import { IndexBodyComponent } from './index-body/index-body.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AbstractComponent } from './abstract/abstract.component';
+import { ContactComponent } from './contact/contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
+import { RegistrationComponent } from './registration/registration.component';
+import { AboutComponent } from './about/about.component';
+import { CurrentIssueComponent } from './current-issue/current-issue.component';
+import { ArchiveComponent } from './archive/archive.component';
+import { EditorialBoardComponent } from './editorial-board/editorial-board.component';
+import { SubmitManuscriptComponent } from './submit-manuscript/submit-manuscript.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { AuthorsGuidelinesComponent } from './authors-guidelines/authors-guidelines.component';
+// import { ExportPipeModule } from './exportpipe.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +29,27 @@ import { AbstractComponent } from './abstract/abstract.component';
     HeaderComponent,
     IndexBodyComponent,
     FooterComponent,
-    AbstractComponent
+    AbstractComponent,
+    ContactComponent,
+    RegistrationComponent,
+    AboutComponent,
+    CurrentIssueComponent,
+    ArchiveComponent,
+    EditorialBoardComponent,
+    SubmitManuscriptComponent,
+    PrivacyPolicyComponent,
+    TermsConditionsComponent,
+    AuthorsGuidelinesComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule
+    // ExportPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

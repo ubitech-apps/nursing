@@ -1,44 +1,36 @@
-<div style="background-color: #006db4">
-  <div class="container-fluid py-3 text-light d-flex justify-content-between">
-    <p class="fs-4 px-5">
-      <img
-        src="\assets\tfo_logo.png"
-        alt=""
-        style="width: 60px; height: 30px"
-      />
-      <span class="fs-5">The Nursing Journal of India</span>
-    </p>
-    <div class="py-2 px-5">
-      <a
-        href=""
-        class="text-light px-3"
-        style="text-decoration: none; font-weight: 500; font-size: 16px"
-        ><i class="fa fa-user pe-2 fs-5" style="color: #b3e5ff"></i> Log in</a
-      >
-      <span style="color: #b3e5ff">|</span>
-      <a
-        href=""
-        class="text-light px-3"
-        style="text-decoration: none; font-weight: 500; font-size: 16px"
-        >Register</a
-      >
-
+<div style="background-color: #fff">
+  <div class="container-fluid" style=" border-bottom: 2px solid #336699;">
+    <div class="row">
+    <div class="fs-4 px-lg-5 px-3 d-flex col-md" id="first">
+      <img class="logo_img" src="assets/logo.png" alt="" />
+      <p class="fs-5 lh-sm mt-4" style="color:#336699;font-weight: 500;">The Nursing Journal of India<br> <span
+          class="fs-6 fst-italic">(TNJI-Since 1910)</span></p>
+    </div>
+    <div class="mt-4 px-2 px-lg-5 col-md" id="second">
+      <a href="" class="px-3 mt-5" style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px"><i
+          class="fa fa-user pe-2 fs-5" style="color:#336699;"></i> Log in</a>
+      <span style="color:#336699;">|</span>
+      <a routerLink="/registration" class=" px-3 mt-5"
+        style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px">Register</a>
+    
       <input type="checkbox" id="active" />
       <label for="active" class="menu-btn">
-        <i class="fa fa-bars" style="color: #b3e5ff"></i>
+        <i class="fa fa-bars" style="color:#336699;"></i>
       </label>
       <div class="wrapper">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">About us</a></li>
-          <li><a href="about.html">Current Issue</a></li>
-          <li><a href="project.html">Archives</a></li>
-        <li><a href="project.html">Authors Guidelines</a></li>
-        <li><a href="project.html">Editorial Board</a></li>
-          <li><a href="works.html">Submit Manuscript</a></li>
-          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="/" (click)="reloadCurrentPage();">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/current-issue">Current Issue</a></li>
+          <li><a href="/archive">Archives</a></li>
+          <li><a href="/authors-guidelines">Authors Guidelines</a></li>
+          <li><a href="/editorial-board">Editorial Board</a></li>
+          <li><a href="submitmanuscript">Submit Manuscript</a></li>
+          <li><a href="/contact" (click)="reloadCurrentPage();">Contact us</a></li>
         </ul>
       </div>
     </div>
+    </div>
+
   </div>
 </div>

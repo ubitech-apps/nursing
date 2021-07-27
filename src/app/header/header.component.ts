@@ -13,5 +13,7 @@ export class HeaderComponent implements OnInit {
 
 
   }
-
+ reloadCurrentPage() {
+    window.location.reload();
+   }
 }

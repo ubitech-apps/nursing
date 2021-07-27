@@ -7,7 +7,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(-135deg, #ffffff7d, #29a7dd);
+  background: linear-gradient(-135deg, #ffffff7d,  #336699 );
   clip-path: circle(0px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
 }
@@ -25,12 +25,12 @@
   line-height: 50px;
   border-radius: 50%;
   font-size: 20px;
-  color: #212121;
+  color:   #336699  ;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 #active:checked ~ .menu-btn {
-  color: #212121;
+  color:   #336699  ;
 }
 #active:checked ~ .menu-btn i:before {
   content: "\f00d";
@@ -52,7 +52,7 @@
   font-weight: 600;
   font-family: "Droid Serif", serif;
   padding: 5px 30px;
-  color: #000000;
+  color:   #336699  ;
   position: relative;
   line-height: 50px;
   transition: all 0.3s ease;
@@ -73,7 +73,7 @@
   transform: scaleY(1);
 }
 .wrapper ul li a:hover {
-  color: #29a7dd;
+  color:  #336699 ;
 }
 input[type="checkbox"] {
   display: none;
@@ -81,7 +81,33 @@ input[type="checkbox"] {
 .custom_width {
   width: 95%;
 }
+.logo_img{
+  width: 100px; 
+}
+  .fst-italic{
+    margin-left: 8.5rem;
+  }
+  #second{
+    margin-left: 25rem;
+     text-align: center;
+    
+
+}
 @media screen and (max-width: 768px) {
+  .fst-italic{
+    margin-left:0rem;
+  }
+  #first{
+ 
+
+    order: 2;
+  }
+#second{
+   margin-left: 1px;
+     text-align: center;
+    order: 1;
+
+}
   .custom_width {
     width: 80%;
   }
