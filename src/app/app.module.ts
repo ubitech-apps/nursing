@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,6 +20,8 @@ import { SubmitManuscriptComponent } from './submit-manuscript/submit-manuscript
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { AuthorsGuidelinesComponent } from './authors-guidelines/authors-guidelines.component';
+import { Address } from './address';
+import { HttpClientModule } from '@angular/common/http';
 // import { ExportPipeModule } from './exportpipe.module';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { AuthorsGuidelinesComponent } from './authors-guidelines/authors-guideli
     PrivacyPolicyComponent,
     TermsConditionsComponent,
     AuthorsGuidelinesComponent,
+ 
     
   ],
   imports: [
@@ -48,10 +50,11 @@ import { AuthorsGuidelinesComponent } from './authors-guidelines/authors-guideli
     FontAwesomeModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     // ExportPipeModule
   ],
-  providers: [],
+  providers: [Address],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

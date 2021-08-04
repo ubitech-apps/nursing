@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from "../address";
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-editorial-board',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editorial-board.component.css']
 })
 export class EditorialBoardComponent implements OnInit {
-
-  constructor() { }
+  data: any;
+  constructor(private addre:Address, private api:ApiServiceService) { }
 
   ngOnInit(): void {
+this.api.editorial_board().subscribe((datas)=>{
+this.data = datas;
+});
   }
 
 }

@@ -3,6 +3,14 @@ background-color: #F59E5F7e;
 font-size: 1.5em;
 padding: 1%;
 font-weight: 600;
-border-top-color: 1px solid red;
-    padding: 12px;
+padding: 12px;
+font-family: "Droid Serif",serif;
+}
+.member-card{
+    flex-direction:inherit;
+}
+@media only screen and (max-width:768px){
+    .member-card{
+    flex-direction:column;
+}
 }

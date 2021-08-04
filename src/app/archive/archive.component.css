@@ -4,5 +4,47 @@ font-size: 1.5em;
 padding: 1%;
 font-weight: 600;
 border-top-color: 1px solid red;
-    padding: 12px;
+padding: 12px;
+ color: #336699;
+   font-family: "Droid Serif", serif;
+}
+.mat-expansion-panel-header {
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid rgb(0 0 0 / 21%);
+    flex-direction: row;
+    align-items: center;
+    padding: 0 24px;
+}
+.uliset{
+      list-style-type: none;
+    background: #eee;
+    border-radius: 10px 10px;
+    padding: 1em;
+    margin: 0 0 2em;
+}
+.issues{
+  border-bottom: 1px solid #d2c9c9;
+   font-family: "Droid Serif", serif;
+  line-height: 1.3;
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-indicator::after {
+    color:#336699;
+}
+.mat-expansion-panel-body {
+    padding: 1px!important;
+}
+.issue-links{
+  color:#336699; font-family: 'Droid Serif',serif; text-decoration: none; font-size: 1em;line-height: 1.4;font-weight: 500;
+
+}.issues-title{
+ font-weight:600;
+  color:#336699;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.4;
+  font-family: 'Droid Serif'; 
 }

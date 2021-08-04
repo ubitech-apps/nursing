@@ -7,7 +7,7 @@
           class="fs-6 fst-italic">(TNJI-Since 1910)</span></p>
     </div>
     <div class="mt-4 px-2 px-lg-5 col-md" id="second">
-      <a href="" class="px-3 mt-5" style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px"><i
+      <a  [href]="admin_url" target="_blank" class="px-3 mt-5" style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px"><i
           class="fa fa-user pe-2 fs-5" style="color:#336699;"></i> Log in</a>
       <span style="color:#336699;">|</span>
       <a routerLink="/registration" class=" px-3 mt-5"
@@ -19,14 +19,14 @@
       </label>
       <div class="wrapper">
         <ul>
-          <li><a href="/" (click)="reloadCurrentPage();">Home</a></li>
-          <li><a href="/about">About us</a></li>
-          <li><a href="/current-issue">Current Issue</a></li>
-          <li><a href="/archive">Archives</a></li>
-          <li><a href="/authors-guidelines">Authors Guidelines</a></li>
-          <li><a href="/editorial-board">Editorial Board</a></li>
+          <li><a href="#" (click)="reloadCurrentPage();">Home</a></li>
+          <li><a  href="about">About us</a></li>
+          <li><a href="current-issue">Current Issue</a></li>
+          <li><a href="archive">Archives</a></li>
+          <li><a href="authors-guidelines">Authors Guidelines</a></li>
+          <li><a href="editorial-board">Editorial Board</a></li>
           <li><a href="submitmanuscript">Submit Manuscript</a></li>
-          <li><a href="/contact" (click)="reloadCurrentPage();">Contact us</a></li>
+          <li><a href="contact">Contact us</a></li>
         </ul>
       </div>
     </div>

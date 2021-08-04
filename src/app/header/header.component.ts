@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from '../address';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
  public menu: any;
-  constructor() { }
+
+  constructor(private addre: Address) { }
+
+  admin_url =this.addre.add; 
 
   ngOnInit(): void {
-
-
   }
  reloadCurrentPage() {
     window.location.reload();
