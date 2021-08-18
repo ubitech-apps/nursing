@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ApiServiceService } from '../api-service.service';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-registration',
@@ -6,8 +14,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+ @ViewChild('register')
+  mytemplateForm!: NgForm;
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   fullname:any;
+  Tnai_number:any;
   email:any;
   password:any;
   usertype:any;
@@ -21,12 +35,32 @@ export class RegistrationComponent implements OnInit {
    " Mr.",'Ms.', "Miss" ,'Dr.','prof.'
   ];
   usertypes:string[]=[
-    "Author" , "Reviewer"
+    "Author" , "Viewer"
   ];
 
-  constructor() { }
+  constructor(private api: ApiServiceService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+  }
+   onSubmit(formdata: any) {
+    this.api.signup(formdata).subscribe((res) => {
+      if (res) {
+        this._snackBar.open('Successfully Registered', 'Thanks', {
+          duration: 5000,
+          panelClass: ['mat-toolbar', 'mat-primary'],
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        this.mytemplateForm.resetForm();
+      } else {
+        this._snackBar.open('Already Register', 'Retry', {
+          duration: 5000,
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        this.mytemplateForm.resetForm();
+      }
+    });
   }
 
 }

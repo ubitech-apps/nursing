@@ -1,134 +1,174 @@
 <div class="container px-3">
     <div class="border my-4 shadow">
         <div class="header"><span class="text-dark">Registration</span></div>
-        <form #registre class="example-form  my-4">
+        <form  class="example-form  my-4" #register="ngForm"
+        (ngSubmit)="onSubmit(register.value)">
             <div class="row px-lg-5 px-3 ">
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                    <span class=" pt-3 fw-bold d-none d-lg-inline labels">Salutations:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Salutation</mat-label>
-                    <mat-select name="salutation" [(ngModel)]="salutation" required #salutationVar="ngModel" [ngClass]="{
+                <div class="mt-1 td-s">
+                    <div class="col-sm-3 text-center pt-3 fw-bold d-none d-lg-inline labels">Salutation:</div>
+
+                    <div class="col-sm-9">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Salutation</mat-label>
+                            <mat-select name="salutation" [(ngModel)]="salutation" required #salutationVar="ngModel"
+                                [ngClass]="{
+                                                    'is-invalid':
+                                                      (salutationVar.touched || salutationVar.dirty) &&
+                                                      !salutationVar.valid
+                                                  }">
+                                <mat-option matInput *ngFor="let salutation of salutations" [value]="salutation">
+                                    {{ salutation }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="salutationVar.errors?.required">
+                                Please select <strong>salutation</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="mt-1 td-s ">
+                    <div class="col-sm-3 text-center pt-3 fw-bold d-none d-lg-inline labels">Full Name:</div>
+
+                    <div class=" col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Full Name</mat-label>
+                            <input matInput name="fullname" [(ngModel)]="fullname" #username="ngModel" required
+                                [ngClass]="{'is-invalid': (username.touched || username.dirty) && !username.valid}"
+                                placeholder="Please Enter Full Name">
+                            <mat-error *ngIf="!username.errors?.valid">
+                                Please enter <strong>full name</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="mt-1 td-s">
+                    <div class=" col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels">Email:</div>
+                    <div class="col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput name="email" [(ngModel)]="email" #useremail="ngModel" required
+                                [ngClass]="{'is-invalid': (useremail.touched || useremail.dirty) && !useremail.valid}"
+                                placeholder="Please Enter your Email">
+                            <mat-error *ngIf="!useremail.errors?.valid">
+                                Please enter <strong>email</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="mt-1 td-s">
+                    <div class=" col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels">Password:</div>
+                    <div class="col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input [type]="hide ? 'password' : 'text'" matInput name="password" [(ngModel)]="password"
+                                #userpass="ngModel" required
+                                [ngClass]="{'is-invalid': (userpass.touched ||  userpass.dirty) && !userpass.valid }"
+                                placeholder="Please Enter password">
+
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="!userpass.errors?.valild">
+                                Please enter <strong>password</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="mt-1 td-s">
+                    <div class="col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels">Mobile No:</div>
+                    <div class="col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Mobile</mat-label>
+                            <input matInput name="mobile" [(ngModel)]="mobile" #mobileVar="ngModel" required
+                                [ngClass]="{'is-invalid': (mobileVar.touched ||  mobileVar.dirty) && !mobileVar.valid }"
+                                placeholder="Please Enter mobile">
+                            <mat-error *ngIf="!mobileVar.errors?.valild">
+                                Please enter <strong>mobile</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="mt-1 td-s">
+                    <div class="col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels">User Type:</div>
+
+                    <div class="col-sm-9">
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>User type</mat-label>
+                            <mat-select name="usertype" [(ngModel)]="usertype" required #usertypeVar="ngModel"
+                                [ngClass]="{
                                                 'is-invalid':
-                                                  (salutationVar.touched || salutationVar.dirty) &&
-                                                  !salutationVar.valid
+                                                  (usertypeVar.touched || usertypeVar.dirty) &&
+                                                  !usertypeVar.valid
                                               }">
-                        <mat-option matInput *ngFor="let salutation of salutations" [value]="salutation">
-                            {{ salutation }}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="salutationVar.errors?.required">
-                        Please select <strong>salutation</strong>
-                    </mat-error>
-                </mat-form-field>
+                                <mat-option matInput *ngFor="let usertype of usertypes" [value]="usertype">
+                                    {{ usertype }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="usertypeVar.errors?.required">
+                                Please select <strong>usertype</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
                 </div>
-                <div class="mt-1 " style=" justify-content:space-evenly; display:flex;">
-                    <span class=" pt-3 fw-bold d-none d-lg-inline labels">Full Name:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Full Name</mat-label>
-                        <input matInput name="fullname" [(ngModel)]="fullname" #username="ngModel" required [ngClass]="{'is-invalid': (username.touched || username.dirty) && !username.valid}" placeholder="Please Enter Full Name">
-                        <mat-error *ngIf="!username.errors?.valid">
-                            Please enter <strong>full name</strong>
-                        </mat-error>
-                    </mat-form-field>
+                <div class="mt-1 td-s">
+                    <div class="col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels">TNAI Number:</div>
+                    <div class="col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>TNAI Number</mat-label>
+                            <input type="number" matInput name="Tnai_number" [(ngModel)]="Tnai_number" #TnaiVar="ngModel" required
+                                [ngClass]="{'is-invalid': (TnaiVar.touched ||  TnaiVar.dirty) && !TnaiVar.valid }"
+                                placeholder="Please Enter TNAI Number">
+                            <mat-error *ngIf="!TnaiVar.errors?.valild">
+                                Please enter <strong>TNAI Number</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
                 </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                    <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels">Email:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input matInput name="email" [(ngModel)]="email" #useremail="ngModel" required  [ngClass]="{'is-invalid': (useremail.touched || useremail.dirty) && !useremail.valid}" placeholder="Please Enter your Email">
-                        <mat-error *ngIf="!useremail.errors?.valid">
-                            Please enter <strong>email</strong>
-                        </mat-error>
-                    </mat-form-field>
+                <div class="mt-1 td-s">
+                    <div class="col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels">Qualification:</div>
+
+                    <div class="col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Qualification</mat-label>
+                            <input matInput name="qualification" [(ngModel)]="qualification" #qualificationVar="ngModel"
+                                required
+                                [ngClass]="{'is-invalid': (qualificationVar.touched || qualificationVar.dirty) && !qualificationVar.valid}"
+                                placeholder="Please Enter qualification">
+                            <mat-error *ngIf="qualificationVar.errors?.required">
+                                Please enter <strong>qualification</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
                 </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                    <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels">Password:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input [type]="hide ? 'password' : 'text'" matInput name="password"  [(ngModel)]="password" #userpass="ngModel"  required [ngClass]="{'is-invalid': (userpass.touched ||  userpass.dirty) && !userpass.valid }" placeholder="Please Enter password">
-                        
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
-                        <mat-error *ngIf="!userpass.errors?.valild">
-                            Please enter <strong>password</strong>
-                        </mat-error>
-                    </mat-form-field>
+                <div class="mt-1 td-s">
+                    <div class="col-sm-3 text-center pt-3 pt-3 fw-bold d-none d-lg-inline labels"> Address</div>
+
+                    <div class="col-sm-9">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Address</mat-label>
+                            <input matInput name="address" [(ngModel)]="address" #useraddre="ngModel" required
+                                [ngClass]="{'is-invalid': (useraddre.touched || useraddre.dirty) && !useraddre.valid}"
+                                placeholder="Please Enter Address">
+                            <mat-error *ngIf="useraddre.errors?.required">
+                                Please enter <strong>Address</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
                 </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                    <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels">Mobile No:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Mobile</mat-label>
-                        <input matInput name="mobile" [(ngModel)]="mobile" #mobileVar="ngModel" required
-                            [ngClass]="{'is-invalid': (mobileVar.touched ||  mobileVar.dirty) && !mobileVar.valid }"
-                            placeholder="Please Enter mobile">
-                        <mat-error *ngIf="!mobileVar.errors?.valild">
-                            Please enter <strong>mobile</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                    <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels">User Type:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>User type</mat-label>
-                    <mat-select name="usertype" [(ngModel)]="usertype" required #usertypeVar="ngModel" [ngClass]="{
-                                'is-invalid':
-                                  (usertypeVar.touched || usertypeVar.dirty) &&
-                                  !usertypeVar.valid
-                              }">
-                        <mat-option matInput *ngFor="let usertype of usertypes" [value]="usertype">
-                            {{ usertype }}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="usertypeVar.errors?.required">
-                        Please select <strong>usertype</strong>
-                    </mat-error>
-                </mat-form-field>
-                </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                    <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels">Qualification:</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Qualification</mat-label>
-                        <input matInput name="qualification" [(ngModel)]="qualification" #qualificationVar="ngModel" required
-                            [ngClass]="{'is-invalid': (qualificationVar.touched || qualificationVar.dirty) && !qualificationVar.valid}"
-                            placeholder="Please Enter qualification">
-                        <mat-error *ngIf="qualificationVar.errors?.required">
-                            Please enter <strong>qualification</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;">
-                   <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels"> Address</span>
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Address</mat-label>
-                        <input matInput name="address" [(ngModel)]="address" #useraddre="ngModel" required [ngClass]="{'is-invalid': (useraddre.touched || useraddre.dirty) && !useraddre.valid}" placeholder="Please Enter Address">
-                        <mat-error *ngIf="useraddre.errors?.required">
-                            Please enter <strong>Address</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="mt-1" style=" justify-content:space-evenly; display:flex;" >
-                    <!-- <span class="pt-3 pt-3 fw-bold d-none d-lg-inline labels">Address:</span> -->
-                <!-- </div>
-                <div class="col-md-10" style="text-align: initial;"> -->
-                    <button  class="btn btn-outline-primary text-capitalize">Submit</button>
-                    <!--  <button [disabled]="!registre.valid" class="text-start btn btn-outline-primary text-capitalize" mat-stroked-button>Submit</button> -->
+                <div class="mt-1 td-s">
+                    <button type="submit" [disabled]="!register.valid" mat-stroked-button class="btn btn-outline-primary">
+                        Submit
+                    </button>
+
+                    <!-- <button class="btn btn-outline-primary text-capitalize">Submit</button> -->
+
                 </div>
             </div>
         </form>

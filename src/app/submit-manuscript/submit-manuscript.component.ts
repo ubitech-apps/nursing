@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from '../address';
+import { ApiServiceService } from '../api-service.service';
 
 @Component({
   selector: 'app-submit-manuscript',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./submit-manuscript.component.css']
 })
 export class SubmitManuscriptComponent implements OnInit {
-
-  constructor() { }
+data:any;
+  constructor(private api:ApiServiceService,private address:Address) { }
 
   ngOnInit(): void {
+    this.api.manuscript().subscribe((data)=>{
+      this.data=data;
+
+      console.log(data);
+      
+    })
   }
 
 }

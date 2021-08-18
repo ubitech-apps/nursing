@@ -38,7 +38,7 @@ padding: 12px;
     padding: 1px!important;
 }
 .issue-links{
-  color:#336699; font-family: 'Droid Serif',serif; text-decoration: none; font-size: 1em;line-height: 1.4;font-weight: 500;
+  color:#336699;cursor: pointer;font-family: 'Droid Serif',serif; text-decoration: none; font-size: 1em;line-height: 1.4;font-weight: 500;
 
 }.issues-title{
  font-weight:600;

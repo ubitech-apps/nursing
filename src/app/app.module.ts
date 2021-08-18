@@ -22,7 +22,13 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
 import { AuthorsGuidelinesComponent } from './authors-guidelines/authors-guidelines.component';
 import { Address } from './address';
 import { HttpClientModule } from '@angular/common/http';
-// import { ExportPipeModule } from './exportpipe.module';
+import { ExportPipeModule } from './exportpipe.module';
+import { FullTextComponent } from './full-text/full-text.component';
+import { ReferencesComponent } from './references/references.component';
+import { PastArticleComponent } from './past-article/past-article.component';
+import { SubjectArticleComponent } from './subject-article/subject-article.component';
+import { SearchArticleComponent } from './search-article/search-article.component';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +47,12 @@ import { HttpClientModule } from '@angular/common/http';
     PrivacyPolicyComponent,
     TermsConditionsComponent,
     AuthorsGuidelinesComponent,
+    FullTextComponent,
+    ReferencesComponent,
+    PastArticleComponent,
+    SubjectArticleComponent,
+    SearchArticleComponent
+    ,
  
     
   ],
@@ -51,8 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
-    // ExportPipeModule
+    HttpClientModule,
+    ExportPipeModule
   ],
   providers: [Address],
   bootstrap: [AppComponent]

@@ -9,22 +9,22 @@
       <h1 class="text-center text-light search pt-lg-5 pt-3">Search Articles</h1>
       <div class="main">
         <div class="input-group">
-          <input type="text" class="form-control allfield" placeholder="Enter Keywords, authors, DOI,ORCID,etc. "
+          <input type="text" class="form-control allfield" placeholder="Enter Keywords, authors, DOI,Title, etc. "
             >
           <div class="input-group-append">
             <button class="btn btn-secondary searchbox" type="button">
-              <i class="fa fa-search" style="font-size: x-large"></i>
+              <i class="fa fa-search" style="font-size: x-large" (click)="search()"></i>
             </button>
           </div>
         </div>
       </div>
     </form>
-    <div class="py-lg-5 my-lg-5 my-4 text-center fs-3 text-white" style="font-family: Droid Serif">
-      0 articles
+    <div class="py-lg-5 my-lg-5 my-4 text-center fs-3 text-white" style="font-family: Droid Serif" >
+     {{vau?.total}}  articles
     </div>
   </div>
   <div class="b">
-    <p class="text-uppercase text-center my-0 blues fs-lg-5 fs-6">India's oldest Nursing journal with more then 100 years of legacy
+    <p class="text-uppercase text-center my-0 blues fs-lg-5 fs-6">India's oldest Nursing journal with more than 100 years of legacy
     </p>
   </div>
 
@@ -53,7 +53,6 @@
         <div class="" style="background-color: #336699;">
           <h5 class="text-capitalize text-light">authors</h5>
           <p class="text-lights fs-5 p-2">Publish your research. Enhance your career.</p>
-
         </div>
       </div>
       <div class="col-md-3 col-sm-12 col-lg-3 side-border">
@@ -86,83 +85,13 @@
       Explore Articles by Subject
     </h2>
     <br />
-    <div class="row">
-      <div class="col-lg-3 col-sm-12">
+    <div class="row"  >
+      <div class="col-lg-3 col-sm-12" *ngFor="let items of data">
         <ul class="list-unstyled">
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Allergy and Immunology
-            </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">Anaesthesia </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">Cardiology </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Otorhinolaryngology
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-        <ul class="list-unstyled">
-          <li><a class="text-decoration-none mt-33" href="#">Dentistry </a></li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Pharmaceutical Science</a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#"> Dermatology </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">Obstetrics & Gynaecology
-            </a>
-          </li>
-          <!-- <li><a class="text-decoration-none mt-33" href="#"> Cardiothoracic Surgery </a></li>
-                    <li><a class="text-decoration-none mt-33" href="#"> Environment and Sustainability </a></li> -->
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-        <ul class="list-unstyled">
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Gastroenterology
-            </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">Geriatrics </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Cardiothoracic Surgery
-            </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Environment and Sustainability
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-12">
-        <ul class="list-unstyled">
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Medical Education
-            </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#"> Hematology </a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#"> Family Medicine</a>
-          </li>
-          <li>
-            <a class="text-decoration-none mt-33" href="#">
-              Infectious Disease
+          <li >
+             
+            <a class="text-decoration-none mt-33" (click)="getarticle(items.category_id)" style="cursor: pointer;">
+          {{items.category_name}}
             </a>
           </li>
         </ul>
@@ -174,84 +103,32 @@
   <div class="container">
     <div class="row">
       <h2 class="text-center fw-bold my-4">Trending Articles</h2>
-      <div class="e">
+      <div class="e" >
+       
         <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
-          <div class="col">
+          <div class="col" *ngFor="let item of datas">
+             {{item.view}}
             <div class="card h-100">
               <div class="card-header card-headers"></div>
-              <img src="assets\article_img\no_image.jpg" class="img-fluid img-thumbnail my-2" alt="..." />
+              <img [src]="img+item.graphic" style="height: 200px;" class="img-fluid img-thumbnail my-2" alt="..." />
               <div class="card-body">
-                <!-- <p>Article</p>
-                                <h5 class="card-title">Card title</h5> -->
-                <p class="card-text text-color text-color">
-                  Clinical Pain Assessment Scoring Systems and Practice Essentials
-                  in Acute and Chronic Pain<span class="px-2"><i class="fa fa-angle-right"></i></span>
-                </p>
+           
+                <a class="card-text text-color text-color text-decoration-none" (click)="abstract_data(item.article_id)" style="margin: 0px; cursor: pointer;" [innerHTML]="item.title">
+                 <span class="px-2"><i class="fa fa-angle-right"></i></span>
+                </a>
 
-                <hr />
+                <hr style="margin: 0px;" />
                 <div>
-                  <span class="text-secondary">Ahmed Abdelhady, Rawan Alshahrani
+                  <span class="text-secondary">{{item.authors}}
                   </span>
                 </div>
               </div>
             </div>
+
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-header card-headers"></div>
-              <img src="assets\article_img\no_image.jpg" class="img-fluid img-thumbnail" alt="..." />
-              <div class="card-body">
-                <!-- <h5 class="card-title">Card title</h5> -->
-                <p class="card-text text-color">
-                  Effectiveness of Botulinum Toxin in Managing Temporomandibular
-                  Disorders: A Systematic Review<span class="px-2"><i class="fa fa-angle-right"></i></span>
-                </p>
-                <hr />
-                <div>
-                  <span class="text-secondary">
-                    Fatimah Al Tarouti, Zeinab AlHawsawi</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-header card-headers"></div>
-              <img src="assets\article_img\no_image.jpg" class="img-fluid img-thumbnail" alt="..." />
-              <div class="card-body">
-                <!-- <h5 class="card-title">Card title</h5> -->
-                <p class="card-text text-color">
-                  Effect of High and Low Caffeine Dosage Regimens on Mortality in
-                  Preterm Infants: A Systematic Review<span class="px-2"><i class="fa fa-angle-right"></i></span>
-                </p>
-                <hr />
-                <div>
-                  <span class="text-secondary">
-                    Aseel Alnamlah, Abdulallah Mguens, Zeinab AlHawsawi</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-header card-headers"></div>
-              <img src="assets\article_img\no_image.jpg" class="img-fluid img-thumbnail" alt="..." />
-              <div class="card-body">
-                <!-- <h5 class="card-title">Card title</h5> -->
-                <p class="card-text text-color">
-                  In vitro and in vivo evaluation of prebiotic potential of pectin
-                  on vaginal lactobacilli
-                  <span class="px-2"><i class="fa fa-angle-right"></i></span>
-                </p>
-                <hr />
-                <div>
-                  <span class="text-secondary">Amani Alamrani, Mohammed Alqahtani, Abdulelah Asiri, Yousef
-                    Alharthi,
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+        
+    
+
         </div>
       </div>
     </div>

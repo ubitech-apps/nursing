@@ -21,9 +21,16 @@ padding: 12px;
     background-color: #336699;
    
 }
-
+.td-s{
+    justify-content:space-evenly; 
+    display:flex;
+}
 @media only screen and (max-width:678px){
     .mat-form-field{
    width:100% !important;
+}
+.td-s{
+    justify-content:unset; 
+    display:block;
 }
 }

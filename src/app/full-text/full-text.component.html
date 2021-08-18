@@ -1,0 +1,72 @@
+<div class="container-fluid" *ngFor="let item of data">
+    <div class="row px-lg-5 px-3 pt-3 pb-1" style="
+      background: linear-gradient(
+        to bottom,
+        #fff 0,
+        #fff 30%,
+        #eee 70%,
+        #eee 100%
+      );
+    ">
+        <div class="col-sm-12 col-md-2 px-md-5 d-flex d-lg-inline justify-content-space-evenly">
+            <p class="text-start view-s"><span class="number">{{item.view}}</span> <br>Views&nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p class="text-start text-secondary view-s"><span class="number">{{item.download}}</span> <br />Downloads</p>
+        </div>
+        <div class="col-sm-12 col-md-8">
+            <div>
+                <div class="mb-1" style="font-size: 0.85em; color: #666">{{item.category_name}}</div>
+            <span class="article-title" [innerHTML]="item.title">
+                
+                </span>
+                <div class="authors mt-2 mt-lg-1">{{item.authors}}</div>
+                <div style="    font-size: 12.24px;line-height: 20.8px;color: #777;margin-bottom: 0;"> Published online: {{item.dates}}</div>
+                <div class="my-4">
+                    <p class="pre">{{item.doi_url}}</p>
+                </div>
+            </div>
+            <div class="myDIV d-flex justify-content-between">
+                <div class="py-1 px-1 d-grid d-lg-inline-block">
+                    <a class="linkage p-2 p-lg-2 selected text-decoration-none" (click)="abstract(item.article_id)">Abstract</a>
+
+                    <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file-text px-1"
+                            aria-hidden="true" (click)="exit()"></i>Full Text</a>
+
+                    <!-- <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-book px-1"
+                            aria-hidden="true" [innerrHTML]="item.long_desc"></i>References</a> -->
+
+                    <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file-pdf-o px-1"
+                            aria-hidden="true"></i>Graphical Abstract</a>
+
+                    <a class="linkage p-2 p-lg-2 text-decoration-none"  [href]="pdf_path+item.file_url"><i class="fa fa-download px-1"></i>Download
+                        PDF</a>
+
+                    <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file px-1"
+                            aria-hidden="true"></i>Supplementary Documents</a>
+
+
+                </div>
+                <div class="py-1 px-1">
+                    <a class="bg-Warning"><i class="fa fa-share-alt text-warning fs-4 "></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-2">
+          <a class="bg-Warning"><i class="fa fa-share-alt text-warning fs-4 "></i></a>
+    </div> -->
+
+    </div>
+
+    <div class="row px-lg-5 px-3 py-3" style="background:#fff;">
+        <div class="col-sm-12 col-md-2 px-md-5">
+        </div>
+        <div class="col-sm-12 col-md-8">
+            <div>
+                <h1 class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">FULL TEXT</h1>
+                <p class="texts" style="font-size:1.1em; line-height: 1.8;" [innerHTML]="item.full_text"></p>
+
+                <p class="mb-4"><b class="me-2 text-secondary" style="color:#333">Keywords:</b>{{item.keywords}}</p>
+            </div>
+        </div>
+    </div>
+</div>

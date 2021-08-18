@@ -7,26 +7,36 @@ import { AuthorsGuidelinesComponent } from './authors-guidelines/authors-guideli
 import { ContactComponent } from './contact/contact.component';
 import { CurrentIssueComponent } from './current-issue/current-issue.component';
 import { EditorialBoardComponent } from './editorial-board/editorial-board.component';
+import { FullTextComponent } from './full-text/full-text.component';
 import { IndexBodyComponent } from './index-body/index-body.component';
+import { PastArticleComponent } from './past-article/past-article.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { ReferencesComponent } from './references/references.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SubjectArticleComponent } from './subject-article/subject-article.component';
 import { SubmitManuscriptComponent } from './submit-manuscript/submit-manuscript.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+
 
 const routes: Routes = [
 
   {path: '', component: IndexBodyComponent},
-  {path: 'abstract', component: AbstractComponent},
+  {path: 'abstract/:id', component: AbstractComponent},
   {path: 'contact', component:ContactComponent},
   {path: 'registration', component:RegistrationComponent},
-  {path: 'current-issue', component:CurrentIssueComponent},
-  {path: 'about', component:AboutComponent},
-  {path: 'editorial-board', component:EditorialBoardComponent},
+  {path:'current-issue', component:CurrentIssueComponent},
+  {path:'about', component:AboutComponent},
+  {path:'editorial-board', component:EditorialBoardComponent},
   {path:'archive', component:ArchiveComponent},
   {path:'submitmanuscript', component:SubmitManuscriptComponent},
   {path:'privacy-policy', component:PrivacyPolicyComponent},
   {path:'authors-guidelines', component:AuthorsGuidelinesComponent},
-  {path:'terms-conditions', component:TermsConditionsComponent}
+  {path:'terms-conditions', component:TermsConditionsComponent},
+  {path:'full-text/:id',component:FullTextComponent},
+  {path:'references/:id',component:ReferencesComponent},
+  {path:'past-issue/:id',component:PastArticleComponent},
+  {path:'article/:id',component:SubjectArticleComponent},
+  
 
 
 ];

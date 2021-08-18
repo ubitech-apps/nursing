@@ -2,118 +2,28 @@
     <div class="border my-4 shadow">
         <div class="header"><span class="text-dark">Editorial Board</span></div>
         <div class="container">
-            <mat-tab-group mat-align-tabs="center">
-                <mat-tab label="Editor-in-Chief">
-                    <div class="row m-lg-4 m-2">
-                        <div class="col-sm-8">
-
-                            <!-- <div class="card member-card" style="font-size: 12px;" *ngFor="let datas of data"> -->
-
-                            <div class="card member-card" style="font-size: 12px;">
-
-                                <!-- <h4 class="px-3">{{datas.heading}}</h4> -->
-                                
-                                <div class="">
-                        </div>
-                                <img src="assets/roy.png" class="card-img-top p-lg-4 p-2" style="width: 40%;"> 
-                                <div class="card-body " style="font-size: 15px; ">
-                                    <span><b style=" color: #336699;">Name:</b> Prof. (Dr.) Roy K. George</span><br>
-                                    <span><b style=" color: #336699;">Qualification:</b> George M Sc. (N),PhD </span><br>
-                                    <span><b style=" color: #336699;">Designation:</b>  President, TNAI
-                                        Academic Director,
-                                        Baby Memorial Hospital &
-                                        Principal, Baby Memorial
-                                        College of Nursing
-                                        Kozhikode, Kerala-673016
-                                    </span>
-                                    <br>
-                                    <span><b style="color: #336699;">Email:</b> Roykgeorge1966@gmail.com
-                                    </span>
-                                    <br>
-                                    <span><b style="color: #336699;">Phone no.:</b>9544003132 </span><br>
-                                </div> 
+            <ng-container>
+                <mat-tab-group mat-align-tabs="center">
+                    <mat-tab *ngFor="let datas of data; let index = index" [label]="datas.heading">
+                        <div class="row m-lg-4 m-2">
+                            <div class=" col-12 col-md-6 my-3"  *ngFor="let items of datas.data">
+                                <div class="card member-card">
+                                    <img [src]="editorial_url + items.image" class="card-img-top px-4 py-4"
+                                        style="width: 40%; height: 130px;">
+                                    <div class="card-body " style="font-size: 13px; color: #336699;">
+                                        <span class="py-4"><b>Name:</b> {{items.name}}</span><br>
+                                        <span class="py-4"><b>Designation:</b> {{items.department}}</span><br>
+                                       
+                                        <span class="py-4"><b>Email:</b> {{items.email}}</span><br>
+                                        <span class="py-4"><b>Phone no.:</b> {{items.contact}} </span><br>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Editorial Board">
-                    <div class="row m-5">
-                        <div class="col-sm-6">
-                            <div class="card member-card">
-                                <img src="assets/female.png" class="card-img-top px-4 py-4" style="width: 40%;">
-                                <div class="card-body " style="font-size: 13px; color: #336699;">
-                                    <span><b>Name:</b>Prof. (Dr.) Roy K. George</span><br>
-                                    <span><b>Qualification:</b> George M Sc. (N),PhD</span><br>
-                                    <span><b>Designation:</b> President, TNAI Academic Director, Baby Memorial Hospital & Principal, Baby Memorial College of Nursing Kozhikode,
-                                    Kerala-673016</span><br>
-                                    <span><b>Email:</b> Roykgeorge1966@gmail.com</span><br>
-                                    <span><b>Phone no.:</b> 9544003132</span><br>
                         
-                                </div>
-                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="card member-card">
-                                <img src="assets/female.png" class="card-img-top px-4 py-4" style="width: 40%;">
-                               <div class="card-body " style="font-size: 13px; color: #336699;">
-                                    <span><b>Name:</b></span><br>
-                                    <span><b>Qualification:</b></span><br>
-                                    <span><b>Designation:</b></span><br>
-                                    <span><b>Email:</b></span><br>
-                                    <span><b>Phone no.:</b></span><br>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </mat-tab>
-                <mat-tab label="Editorial Advisory Board Member">
-                    <div class="row m-5">
-                        <div class="col-sm-6">
-                            <div class="card member-card">
-                                <img src="assets/female.png" class="card-img-top px-4 py-4" style="width: 40%;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card member-card">
-                                <img src="assets/female.png" class="card-img-top px-4 py-4" style="width: 40%;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <p></p>
-                        <div class="col-sm-6">
-                            <div class="card member-card">
-                                <img src="assets/female.png" class="card-img-top px-4 py-4" style="width: 40%;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card member-card">
-                                <img src="assets/female.png" class="card-img-top px-4 py-4" style="width: 40%;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional
-                                        content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
+                    </mat-tab>
+                </mat-tab-group>
+            </ng-container>
         </div>
     </div>
 

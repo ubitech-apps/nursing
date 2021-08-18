@@ -7,13 +7,15 @@
                 <mat-expansion-panel style="margin-bottom: .75em;">
                     <mat-expansion-panel-header>
                         <mat-panel-title class="issues-title" >
-                           {{datas.name}}
+                         vol {{datas.volume }} {{datas.date_publish}}
+    
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <p class="m-3"><a class="issue-links" href="">Issue 3</a></p>
-                    <hr>
-                    <p class="m-3"><a class="issue-links" href="">Issue 2</a></p><hr>
-                    <p class="m-3"><a class="issue-links" href="">Issue 1</a></p>
+                    <p class="m-3" *ngFor="let items of datas.data" >
+                        <a class="issue-links"  (click)="get_issue(datas.issue_id)">
+                           issue {{items.number}}
+                        </a>
+                    </p>
                 </mat-expansion-panel>
             </mat-accordion>  
         </div>

@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private addre: Address) { }
 
-  admin_url =this.addre.add; 
+  admin_path =this.addre.admin_url; 
 
   ngOnInit(): void {
   }

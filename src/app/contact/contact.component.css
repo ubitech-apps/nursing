@@ -7,6 +7,12 @@ border-top-color: 1px solid red;
 font-family: "Droid Serif",serif;
     padding: 12px;
 }
+.bt-s{
+    font-weight: 500;
+    font-family: "Droid Serif",serif;
+    justify-content:space-evenly; 
+    display:flex;
+}
 .mat-form-field{
    width:70% !important;
 }
@@ -22,5 +28,10 @@ font-family: "Droid Serif",serif;
 @media only screen and (max-width:768px){
     .mat-form-field{
    width:100% !important;
+}
+.bt-s{
+    font-family: "Droid Serif",serif;
+    justify-content:space-evenly; 
+    display:block;
 }
 }

@@ -6,6 +6,7 @@ font-weight: 600;
 padding: 12px;
 font-family: "Droid Serif",serif;
 }
+
 .member-card{
     flex-direction:inherit;
 }
