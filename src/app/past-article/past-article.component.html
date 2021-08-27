@@ -24,13 +24,16 @@
                                 <p class="btn-links">
                                     <a class="btn-links text-decoration-none px-1" *ngIf="items.long_desc!=''"
                                         (click)="abstract_data(items.article_id)">Abstract |</a>
-                                    <a class="btn-links text-decoration-none px-1" *ngIf="items.full_text!=''"
-                                        (click)="full_text(items.article_id)">Full Text |</a>
-                                    <a class="btn-links text-decoration-none px-1"
-                                        (click)="countdownload(pdf+item.file_url, items.article_id)"
-                                        *ngIf="items.file_url!=''">PDF</a>
+                                    <span *ngIf="items.full_text!=''">
+                                        <a class="btn-links text-decoration-none px-1" *ngIf="items.full_text" (click)="full_text(items.article_id)">Full
+                                            Text |</a>
+                                    </span>
+                                <span *ngIf="items.file_url != ''">
+                                    <a class="btn-links text-decoration-none px-1" (click)=" countdownload(pdf + items.file_url, items.article_id)"
+                                        *ngIf="items.file_url">PDF</a>
+                                </span>
                                 </p>
-                            </div>
+                            </div> 
                             <div class="col-sm-12 col-md-2  d-flex d-lg-inline justify-content-space-evenly">
                                 <p class="text-start  view-s m-0"><span class="number">{{items.view}}</span>
                                     Views&nbsp;&nbsp;</p>

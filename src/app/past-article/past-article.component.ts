@@ -18,7 +18,7 @@ pdf = this.address.pdf_url;
   ngOnInit(): void {
    this.acti_router.params.subscribe( res => { let id  = res.id;
     this.article_data(id);
-    // console.log(id);
+    console.log(id);
     });
   }
 
