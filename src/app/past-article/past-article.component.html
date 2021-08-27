@@ -8,13 +8,13 @@
                     {{item.category_name}}
                 </h5>
                 <div class="card shadow my-4" *ngFor="let items of item.data">
-                    <p>{{item.issue_no}}</p>
+                    <!-- <p>{{item.issue_no}}</p> -->
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-10 px-3">
 
-                                <h5 class="card-text title" [innerHTML]="items.title">
-                                </h5>
+                                <p class="card-text title" [innerHTML]="items.title | htmlSpecial ">
+                                </p>
                                 <span class="text-drak" style="font-size: .85em;"
                                     *ngIf="items.authors!=''">{{items.authors}}</span><br>
                                 <span class="text-second" style="color:#777;font-size: .765em"
@@ -23,11 +23,11 @@
                                     {{items.dates}}</span>
                                 <p class="btn-links">
                                     <a class="btn-links text-decoration-none px-1" *ngIf="items.long_desc!=''"
-                                        (click)="abstract_data(item.article_id)">Abstract |</a>
+                                        (click)="abstract_data(items.article_id)">Abstract |</a>
                                     <a class="btn-links text-decoration-none px-1" *ngIf="items.full_text!=''"
-                                        (click)="full_text(item.article_id)">Full Text |</a>
+                                        (click)="full_text(items.article_id)">Full Text |</a>
                                     <a class="btn-links text-decoration-none px-1"
-                                        (click)="countdownload(pdf+item.file_url, item.article_id)"
+                                        (click)="countdownload(pdf+item.file_url, items.article_id)"
                                         *ngIf="items.file_url!=''">PDF</a>
                                 </p>
                             </div>

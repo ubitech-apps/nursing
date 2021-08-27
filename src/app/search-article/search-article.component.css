@@ -1,0 +1,37 @@
+.header{
+background-color: #F59E5F7e;
+font-size: 1.5em;
+padding: 1%;
+font-family: 'Droid Serif';
+font-weight: 600;
+border-top-color: 1px solid red;
+padding: 12px;
+}
+.title{
+    font-size: 1.5em;
+    color: #10147e;
+    font-family: "Droid Serif",serif;
+}
+.btn-links{
+    font-size: 19px;
+    color: #10147e;
+    font-family: "Droid Serif",serif;
+}
+.article-type{
+font-size: 1em;
+    font-weight: 600;
+    font-family: "Open Sans",sans-serif;
+
+}
+  .view-s{
+    font-size: .7em;
+     color:#666;
+  }
+    .number{
+     font-size: 1.8em;
+    display: block;
+    color: #444
+  }
+  a{
+    cursor: pointer;
+  }

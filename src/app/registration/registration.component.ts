@@ -20,7 +20,7 @@ export class RegistrationComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-  fullname:any;
+  First_Name:any;
   Tnai_number:any;
   email:any;
   password:any;

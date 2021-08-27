@@ -9,6 +9,7 @@ export class Address{
     editoral_img =this. base_url+"editorial_board/";
     pdf_url = this.base_url+"article/pdf/";
     img_url = this.base_url+"article/image/";
+    supplementary=this.base_url+"supplementary/"
 
 
 }

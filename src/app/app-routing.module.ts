@@ -13,6 +13,7 @@ import { PastArticleComponent } from './past-article/past-article.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ReferencesComponent } from './references/references.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SearchArticleComponent } from './search-article/search-article.component';
 import { SubjectArticleComponent } from './subject-article/subject-article.component';
 import { SubmitManuscriptComponent } from './submit-manuscript/submit-manuscript.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'references/:id',component:ReferencesComponent},
   {path:'past-issue/:id',component:PastArticleComponent},
   {path:'article/:id',component:SubjectArticleComponent},
+  {path:'search/:fdata',component:SearchArticleComponent}
   
 
 

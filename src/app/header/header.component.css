@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 .wrapper {
-  z-index: 1;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(-135deg, #ffffff7d,  #336699 );
+  background: linear-gradient(-135deg, #ffffffeb, #4182c4d6 );
   clip-path: circle(0px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
 }
@@ -16,7 +16,7 @@
 }
 .menu-btn {
   position: absolute;
-  z-index: 2;
+  z-index: 1100;
   /* right: 30px; */
   top: 11px;
   height: 50px;
@@ -97,9 +97,10 @@ input[type="checkbox"] {
   .fst-italic{
     margin-left:0rem;
   }
+  .logo_img{
+    width: 75px;
+  }
   #first{
- 
-
     order: 2;
   }
 #second{
@@ -123,9 +124,7 @@ input[type="checkbox"] {
   ul {
     padding-left: 0;
   }
-}
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .custom_width {
+   .custom_width {
     width: 90%;
   }
 

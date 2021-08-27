@@ -28,17 +28,17 @@
       </div>
       <div class="myDIV d-flex justify-content-between">
       <div class="py-1 px-1 d-grid d-lg-inline-block">
-          <a *ngIf="items.long_desc!=''" class="linkage p-2 p-lg-2 selected text-decoration-none" (click)="abstract(items.article_id)" >Abstract</a>
+          <a *ngIf="items.long_desc!=''" class="linkage p-2 p-lg-2  text-decoration-none" (click)="abstract(items.article_id)" >Abstract</a>
           
           <a *ngIf="items.full_text!=''" class="linkage p-2 p-lg-2 text-decoration-none" (click)="full_text(items.article_id)"><i class="fa fa-file-text px-1"  aria-hidden="true"></i>Full Text</a>
           
-          <a *ngIf="items.referances!=''" class="linkage p-2 p-lg-2 text-decoration-none" (click)="exit()"><i class="fa fa-book px-1" aria-hidden="true"></i>References</a>
+          <a class="linkage p-2 p-lg-2 symbols text-decoration-none" (click)="exit()"><i class="fa fa-book px-1" aria-hidden="true"></i>References</a>
           
-          <a *ngIf="items.img!=''" class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file-pdf-o px-1" aria-hidden="true"></i>Graphical Abstract</a>
+          <a *ngIf="items.img!=''" class="linkage p-2 p-lg-2 text-decoration-none"  (click)="openDialog(img+items.graphic)"><i class="fa fa-file-pdf-o px-1" aria-hidden="true"></i>Graphical Abstract</a>
           
-          <a *ngIf="items.file_url!=''" class="linkage p-2 p-lg-2 text-decoration-none" [href]="pdf+items.file_url"><i class="fa fa-download px-1" ></i>Download PDF</a>
+          <a *ngIf="items.file_url!=''" class="linkage p-2 p-lg-2 text-decoration-none"   [href]="pdf+items.file_url" target="_new" ><i class="fa fa-download px-1" ></i>Download PDF</a>
           
-          <a *ngIf="items.tr!=''" class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file px-1" aria-hidden="true"></i>Supplementary Documents</a>
+          <a *ngIf="items.tr!=''" class="linkage p-2 p-lg-2 text-decoration-none" [href]="supplementary_pdf+items.supplementary"  target="_new"><i class="fa fa-file px-1" aria-hidden="true"></i>Supplementary Documents</a>
          
 
       </div>
@@ -60,7 +60,7 @@
     <div class="col-sm-12 col-md-8">
       <div >
         <h1  class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">REFERENCES</h1>
-        <p class="texts" style="font-size:1.1em; line-height: 1.8;" [innerHTML]="items.long_desc"></p>
+        <p class="texts" style="font-size:1.1em; line-height: 1.8;" [innerHTML]="items.long_desc | htmlSpecial"></p>
 
         <p class="mb-4"><b class="me-2 text-secondary" style="color:#333">Keywords:</b>{{items.keywords}}</p>
       

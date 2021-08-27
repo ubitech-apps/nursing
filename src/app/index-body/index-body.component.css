@@ -112,6 +112,12 @@ border-left: 30px solid transparent;
 .triangles{
   margin-left: 47%; position: absolute;
 }
+.imgstyle{
+  height: 450px;
+  /* object-fit: cover;
+  width: 100vw; object-fit: cover; */
+  width: 100vw;
+}
 @media only screen and (max-width:768px){
 .search {
   font-size: 2em;
@@ -119,6 +125,9 @@ border-left: 30px solid transparent;
   font-weight: 500;
   letter-spacing: -0.02em; */
   /* margin: 0.5em 0 0.25em 0; */
+}
+.imgstyle{
+  height: auto;
 }
 .searchbox {
   position: absolute;
@@ -134,7 +143,6 @@ border-left: 30px solid transparent;
   margin: 15px 55px;
 }
 .allfield {
-
   padding: 12px 12px;
   box-sizing: border-box;
    letter-spacing: 1px;
@@ -156,9 +164,18 @@ border-left: 30px solid transparent;
   margin-left: 41%;
 }
 
-
-
-
-
-
 }
+.newdatas{
+  color: royalblue;
+}
+  .search-sec{
+     position: absolute;
+    top: 50%;
+    width: 100%;
+    background: rgb(0 0 0 / 25%);
+    transform: translateY(-50%);
+    }
+    .slider{
+      position: relative;
+    }
+    

@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngFor="let item of data">
+<div class="container-fluid" *ngFor="let items of item">
     <div class="row px-lg-5 px-3 pt-3 pb-1" style="
       background: linear-gradient(
         to bottom,
@@ -9,63 +9,112 @@
       );
     ">
         <div class="col-sm-12 col-md-2 px-md-5 d-flex d-lg-inline justify-content-space-evenly">
-            <p class="text-start view-s"><span class="number">{{item.view}}</span> <br>Views&nbsp;&nbsp; &nbsp; &nbsp;
+            <p class="text-start view-s"><span class="number">{{items.view}}</span> <br>Views&nbsp;&nbsp; &nbsp; &nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <p class="text-start text-secondary view-s"><span class="number">{{item.download}}</span> <br />Downloads</p>
+            <p class="text-start text-secondary view-s"><span class="number">{{items.download}}</span> <br />Downloads
+            </p>
         </div>
         <div class="col-sm-12 col-md-8">
             <div>
-                <div class="mb-1" style="font-size: 0.85em; color: #666">{{item.category_name}}</div>
-            <span class="article-title" [innerHTML]="item.title">
-                
+                <div class="mb-1" style="font-size: 0.85em; color: #666">{{items.category_name}}</div>
+                <span class="article-title" [innerHTML]="items.title">
                 </span>
-                <div class="authors mt-2 mt-lg-1">{{item.authors}}</div>
-                <div style="    font-size: 12.24px;line-height: 20.8px;color: #777;margin-bottom: 0;"> Published online: {{item.dates}}</div>
+                <div class="authors mt-2 mt-lg-1">{{items.authors}}</div>
+                <div style="    font-size: 12.24px;line-height: 20.8px;color: #777;margin-bottom: 0;"> Published online:
+                    {{items.dates}}</div>
                 <div class="my-4">
-                    <p class="pre">{{item.doi_url}}</p>
+                    <p class="doicls">{{items.doiurl}}</p>
                 </div>
             </div>
             <div class="myDIV d-flex justify-content-between">
                 <div class="py-1 px-1 d-grid d-lg-inline-block">
-                    <a class="linkage p-2 p-lg-2 selected text-decoration-none" (click)="abstract(item.article_id)">Abstract</a>
+                    <ul class="nav">
+                        <li *ngIf="items.long_desc" [ngClass]="{'active': step==='step1'}" (click)="step='step1'"
+                            class="linkgs p-2 p-lg-2 link" (click)="Abstract()"><b>Abstract</b></li>
+                        <li *ngIf="items.full_text" [ngClass]="{'active': step==='step2'}" (click)="step='step2'"
+                            class="linkgs p-2 p-lg-2 link" (click)="fullText()"> <b>Full Text</b></li>
+                        <li *ngIf="items.referances" [ngClass]="{'active': step==='step5'}" (click)="step='step5'"
+                            class="linkgs p-2 p-lg-2 link" (click)="Reference()"> <b>Reference</b></li>
 
-                    <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file-text px-1"
-                            aria-hidden="true" (click)="exit()"></i>Full Text</a>
+                        <li *ngIf="items.graphic" [ngClass]="{'active': step==='step4'}" (click)="step='step4'"
+                            class="linkgs p-2 p-lg-2 link" (click)="GraphicalAbstract()"><b>Graphical Abstract</b></li>
 
-                    <!-- <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-book px-1"
-                            aria-hidden="true" [innerrHTML]="item.long_desc"></i>References</a> -->
+                        <li [ngClass]="{'actives': step==='step3'}" (click)="step='step3'" class=" p-1 p-lg-1 ">
+                            <a style="color:#10147e;" class="text-decoration-none linkgs " [href]="pdf+items.file_url"
+                                target="_new"><i class="fa fa-download px-1"></i>Download PDF</a>
+                        </li>
 
-                    <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file-pdf-o px-1"
-                            aria-hidden="true"></i>Graphical Abstract</a>
-
-                    <a class="linkage p-2 p-lg-2 text-decoration-none"  [href]="pdf_path+item.file_url"><i class="fa fa-download px-1"></i>Download
-                        PDF</a>
-
-                    <a class="linkage p-2 p-lg-2 text-decoration-none"><i class="fa fa-file px-1"
-                            aria-hidden="true"></i>Supplementary Documents</a>
-
-
+                        <li *ngIf="items.graphic" [ngClass]="{'actives': step==='step6'}" (click)="step='step6'"
+                            class=" p-1 p-lg-1"><a style="color:#10147e;" class="text-decoration-none linkgs "
+                                [href]="supplementary_pdf+items.supplementary" target="_new"><i class="fa fa-file px-1"
+                                    aria-hidden="true"></i>Supplementary Documents</a></li>
+                    </ul>
                 </div>
-                <div class="py-1 px-1">
-                    <a class="bg-Warning"><i class="fa fa-share-alt text-warning fs-4 "></i></a>
+
+                <div class="py-1 px-1" style="cursor: pointer;">
+                    <a class="bg-Warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                            class="fa fa-share-alt text-warning fs-4 "></i></a>
                 </div>
+                <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <share-buttons [theme]="'circles-dark'" [include]="['facebook','twitter','copy']"
+     [url]="'https://ubitech.xyz/Nursing/abstract/' + items.article_id+items.title"
+     [title] = "items.title"
+     [autoSetMeta]="false"
+     [size]="1"
+     [showText]="true" >
+  </share-buttons>
+      </div>
+ 
+    </div>
+  </div>
+</div> 
+                <!-- Modal End -->
             </div>
         </div>
-        <!-- <div class="col-md-2">
-          <a class="bg-Warning"><i class="fa fa-share-alt text-warning fs-4 "></i></a>
-    </div> -->
-
     </div>
-
     <div class="row px-lg-5 px-3 py-3" style="background:#fff;">
         <div class="col-sm-12 col-md-2 px-md-5">
         </div>
         <div class="col-sm-12 col-md-8">
             <div>
-                <h1 class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">FULL TEXT</h1>
-                <p class="texts" style="font-size:1.1em; line-height: 1.8;" [innerHTML]="item.full_text"></p>
+                <ng-container *ngIf="fulltext">
+                    <h3 class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">FULL-TEXT</h3>
 
-                <p class="mb-4"><b class="me-2 text-secondary" style="color:#333">Keywords:</b>{{item.keywords}}</p>
+                    <p class="fonts" style="font-size: 1.1em; text-align: justify; line-height: 1.8;"
+                        [innerHtml]="items.full_text | htmlSpecial"></p>
+
+                </ng-container>
+                <ng-container *ngIf="abstract">
+                    <h3 class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">ABSTRACT</h3>
+                    <p class="fonts" style="font-size: 1.1em; text-align: justify; line-height: 1.8;"
+                        [innerHtml]="items.long_desc | htmlSpecial"></p>
+
+                </ng-container>
+                <ng-container *ngIf="reference">
+                    <h3 class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">REFERENCES</h3>
+                    <p class="fonts" style="font-size: 1.1em; text-align: justify; line-height: 1.8;"
+                        [innerHtml]="items.referances | htmlSpecial"></p>
+
+                </ng-container>
+                <ng-container *ngIf="xml">
+                    <h3 class="fonts pt-3" style="font-size:22.4px; font-weight: 600;">XML</h3>
+                    <pre [ngStyle]="{'white-space':'pre-wrap'}">{{xmlFile}}</pre>
+                </ng-container>
+                <ng-container *ngIf="Graphical_abstract">
+
+                    <img style="width: 35%;" class="img-thumbnail" [src]="img+items.graphic">
+
+
+                </ng-container>
+                <p class="my-5"><b class="me-2 text-secondary" style="color:#333">Keywords:</b>{{items.keywords}}</p>
             </div>
         </div>
     </div>

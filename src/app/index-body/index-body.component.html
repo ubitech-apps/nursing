@@ -1,19 +1,85 @@
-<div class="header-img" style="
+<!-- carousel -->
+<div class="slider">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <!-- <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div> -->
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="assets/slider/TNAI.jpg"  class="d-block imgstyle w-100 mx-auto" alt="...">
+        
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="assets/slider/Banner-2.jpeg" class="d-block imgstyle w-100 mx-auto " alt="...">
+        
+      </div>
+      <div class="carousel-item">
+        <img src="assets/slider/Banner-3.jpeg"  class="d-block imgstyle w-100 mx-auto" alt="...">
+        
+      </div>
+            <div class="carousel-item">
+              <img src="assets/slider/Banner-4.jpeg" class="d-block imgstyle w-100 mx-auto" alt="...">
+            
+            </div>
+                  <div class="carousel-item">
+                    <img src="assets/slider/Banner-5.jpeg" class="d-block imgstyle w-100 mx-auto" alt="...">
+                  
+                  </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- carousel -->
+  <!-- search -->
+  <section class="search-sec">
+    <div class="newdatas">
+      <form class="my-lg-1 my-1" #Search="ngForm">
+        <h1 class="text-center text-light search pt-lg-1 pt-1">Search Articles</h1>
+        <div class="main">
+          <div class="input-group">
+            <input class="form-control searchBar allfield" placeholder="Enter Keywords, authors, DOI,Title, etc. "
+              type="search" aria-label="Search" name="searchbar" id="searchBar" [(ngModel)]="searchbar">
+            <div class="input-group-append">
+              <button class="btn btn-secondary searchbox" type="button" (keyup.enter)="searchs(Search.value)"
+                (click)="searchs(Search.value)">
+                <i class="fa fa-search" style="font-size: x-large"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="py-lg-1 my-lg-1 my-1 text-center fs-3 text-white" style="font-family: Droid Serif">
+        {{vau?.total}} articles
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end Search -->
+<!-- <div class="header-img" style="
     background-image: url('assets/slide7.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     z-index: 1;
   ">
-  <div class="py-lg-5 py-1">
-    <form class="my-lg-5 my-2">
-      <h1 class="text-center text-light search pt-lg-5 pt-3">Search Articles</h1>
+  <div class="py-lg-5 py- newdatas">
+    <form class="my-lg-5 my-2" #Search="ngForm">
+      <h1 class="text-center text-light search pt-lg-5 pt-3" >Search Articles</h1>
       <div class="main">
         <div class="input-group">
-          <input type="text" class="form-control allfield" placeholder="Enter Keywords, authors, DOI,Title, etc. "
-            >
+  <input class="form-control searchBar allfield" placeholder="Enter Keywords, authors, DOI,Title, etc. " type="search"  aria-label="Search"
+    name="searchbar" id="searchBar" [(ngModel)]="searchbar">
           <div class="input-group-append">
-            <button class="btn btn-secondary searchbox" type="button">
-              <i class="fa fa-search" style="font-size: x-large" (click)="search()"></i>
+            <button class="btn btn-secondary searchbox" type="button" (keyup.enter)="searchs(Search.value)" (click)="searchs(Search.value)">
+              <i class="fa fa-search" style="font-size: x-large" ></i>
             </button>
           </div>
         </div>
@@ -28,8 +94,12 @@
     </p>
   </div>
 
-</div>
-
+</div> -->
+  <div class="b">
+    <p class="text-uppercase text-center my-0 blues fs-lg-5 fs-6">India's oldest Nursing journal with more than 100 years
+      of legacy
+    </p>
+  </div>
 <div class="gery"></div>
 <div class="triangles">
   <div class="triangle-2"></div>
@@ -40,20 +110,19 @@
       Learn how we support you
     </h4>
     <div class="row pb-4 " style="background-color: #336699;">
-
       <div class="col-md-3 col-sm-12 col-lg-3 side-border">
         <div class="" style="background-color: #336699;">
           <h5 class="text-capitalize text-light mt-3">librarians</h5>
           <p class="text-lights fs-5 m-3">Connect with our world class journal.</p>
-
         </div>
-
       </div>
       <div class="col-md-3 col-sm-12 col-lg-3 side-border">
-        <div class="" style="background-color: #336699;">
-          <h5 class="text-capitalize text-light">authors</h5>
-          <p class="text-lights fs-5 p-2">Publish your research. Enhance your career.</p>
-        </div>
+       <a class="text-decoration-none" routerLink="/authors-guidelines">
+          <div class="" style="background-color: #336699;">
+            <h5 class="text-capitalize text-light">authors</h5>
+            <p class="text-lights fs-5 p-2">Publish your research. Enhance your career.</p>
+          </div>
+       </a>
       </div>
       <div class="col-md-3 col-sm-12 col-lg-3 side-border">
         <div class="" style="background-color: #336699;">
@@ -79,7 +148,7 @@
 <div class="triangles" >
   <div class="triangle-2"></div>
 </div>
-<div class="container text-lg-start text-center">
+<!-- <div class="container text-lg-start text-center">
   <div class="footer my-4">
     <h2 class="text-center fw-bold pt-4">
       Explore Articles by Subject
@@ -98,7 +167,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <div style="background-color: #eee;">
   <div class="container">
     <div class="row">

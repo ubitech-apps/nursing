@@ -43,6 +43,7 @@ countdownload(url:any,id:any){
       // console.log('varsha');
     });
   }
+  
 }
 
 

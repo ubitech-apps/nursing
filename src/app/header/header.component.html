@@ -1,14 +1,16 @@
 <div style="background-color: #fff">
   <div class="container-fluid" style=" border-bottom: 2px solid #336699;">
     <div class="row">
-    <div class="fs-4 px-lg-5 px-3 d-flex col-md" id="first">
-      <img class="logo_img" src="assets/logo.png" alt="" />
-      <p class="fs-5 lh-sm mt-4 text-nowrap" style="color:#336699;font-weight: 500;">The Nursing Journal of India<br> <span
-          class="fs-6 fst-italic">(TNJI-Since 1910)</span></p>
+    <div class=" col-md" id="first">
+    <a  class="fs-4 px-lg-5 px-1 d-flex text-decoration-none" routerLink="/">
+        <img class="logo_img" src="assets/logo.png" alt="" />
+        <p class="fs-5 lh-sm mt-4 text-nowrap" style="color:#336699;font-weight: 500;">The Nursing Journal of India<br> <span
+            class="fs-6 fst-italic">(TNJI-Since 1910)</span></p>
+    </a>
     </div>
     <div class="mt-4 px-2 px-lg-5 col-md" id="second">
       <a  [href]="admin_path" target="_blank" class="px-3 mt-5" style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px"><i
-          class="fa fa-user pe-2 fs-5" style="color:#336699;"></i> Log in</a>
+          class="fa fa-user pe-2 fs-5" style="color:#336699;"></i>Log in</a>
       <span style="color:#336699;">|</span>
       <a routerLink="/registration" class=" px-3 mt-5"
         style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px">Register</a>
@@ -19,7 +21,7 @@
       </label>
       <div class="wrapper">
         <ul>
-          <li><a href="#" (click)="reloadCurrentPage();">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a  href="about">About us</a></li>
           <li><a href="current-issue">Current Issue</a></li>
           <li><a href="archive">Archives</a></li>

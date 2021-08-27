@@ -28,6 +28,11 @@ import { ReferencesComponent } from './references/references.component';
 import { PastArticleComponent } from './past-article/past-article.component';
 import { SubjectArticleComponent } from './subject-article/subject-article.component';
 import { SearchArticleComponent } from './search-article/search-article.component';
+import { HtmlSpecialPipe } from './pipe/html-special.pipe';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+
 
 
 @NgModule({
@@ -51,8 +56,9 @@ import { SearchArticleComponent } from './search-article/search-article.componen
     ReferencesComponent,
     PastArticleComponent,
     SubjectArticleComponent,
-    SearchArticleComponent
-    ,
+    SearchArticleComponent,
+    HtmlSpecialPipe,
+    
  
     
   ],
@@ -64,7 +70,10 @@ import { SearchArticleComponent } from './search-article/search-article.componen
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    ExportPipeModule
+    ExportPipeModule,
+    NgxUsefulSwiperModule,
+    ShareIconsModule,
+    ShareButtonsModule
   ],
   providers: [Address],
   bootstrap: [AppComponent]

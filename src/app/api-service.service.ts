@@ -89,6 +89,9 @@ return this.http.get(this.api+`upadatecountdownload.php?id=${id}`)
   total(){
     return this.http.get(this.api+'total_article.php')
   }
+   searchArticle(fdata:any){
+    return this.http.post(this.api+'searchbox.php', fdata);
+  }
   
 
   }

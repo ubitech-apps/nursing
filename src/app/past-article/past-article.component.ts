@@ -18,28 +18,31 @@ pdf = this.address.pdf_url;
   ngOnInit(): void {
    this.acti_router.params.subscribe( res => { let id  = res.id;
     this.article_data(id);
-    console.log(id);
+    // console.log(id);
     });
   }
 
   article_data(id:any){
     this.api.past_issue(id).subscribe((item)=>{
       this.data=item
-      console.log(id);
+     //   console.log(id);
     })
-
   }
+
   abstract_data(id:any){
- this.routers.navigate(['full-text/' + id])
-
+    //console.log(id);
+ this.routers.navigate(['abstract/'+id])
   }
+
 full_text(id:any){
-this.routers.navigate(['abstract/' + id]);
+
+this.routers.navigate(['full-text/'+id]);
 }
+
 countdownload(url:any,id:any){
   window.open(url, "_blank");
     this.api.countdownload(id).subscribe(res => { console.log(res); 
-      // console.log('varsha');
+       
     });
   }
 

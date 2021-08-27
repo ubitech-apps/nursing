@@ -30,7 +30,53 @@ export class AbstractComponent implements OnInit {
 item:any;
 pdf=this.Address.pdf_url;
 img=this.Address.img_url;
+supplementary_pdf=this.Address.supplementary;
 id:any;
+xmlFile: any;
+issueStatus: any;
+ids: any;
+fulltext = 0;
+abstract = 1;
+xml = 0;
+Graphical_abstract = 0;
+reference=0;
+dataa: any;
+step: any = 'step1';
+
+  Reference(){
+    this.reference=1
+    this.fulltext = 0;
+    this.abstract = 0;
+    this.xml = 0;
+    this.Graphical_abstract = 0;
+  }
+  fullText() {
+    this.reference=0
+    this.fulltext = 1;
+    this.abstract = 0;
+    this.xml = 0;
+    this.Graphical_abstract = 0;
+  }
+    Xml() {
+    this.fulltext = 0;
+    this.abstract = 0;
+    this.xml = 1;
+    this.Graphical_abstract = 0;
+  }
+  GraphicalAbstract() {
+    this.reference=0
+    this.fulltext = 0;
+    this.abstract = 0;
+    this.xml = 0;
+    this.Graphical_abstract = 1;
+  }
+  Abstract() {
+    this.reference=0
+    this.fulltext = 0;
+    this.abstract = 1;
+    this.xml = 0;
+    this.Graphical_abstract = 0;
+  }
 
   ngOnInit(): void {
     this.active_router.params.subscribe( res => { let id  = res.id;
@@ -44,20 +90,6 @@ id:any;
       this.item= members;
     });
   }
-
-  exit(){
-    window.location.reload();
-  }
-
-full_text(id:any){
-  this.routes.navigate(['full-text/' + id])
-
-}
-
-references(id:any){
-this.routes.navigate(['references/'+ id])
-}
-
 }
 
 @Component({

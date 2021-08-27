@@ -27,7 +27,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "bootstrap": "^5.0.2",
     "font-awesome": "^4.7.0",
+    "ngx-sharebuttons": "^8.1.0",
+    "ngx-useful-swiper": "^10.0.1",
     "rxjs": "~6.6.0",
+    "swiper": "^6.8.3",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
