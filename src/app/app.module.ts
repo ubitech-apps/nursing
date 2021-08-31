@@ -32,6 +32,9 @@ import { HtmlSpecialPipe } from './pipe/html-special.pipe';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { LibrariansComponent } from './librarians/librarians.component';
+import { PlagiarismComponent } from './plagiarism/plagiarism.component';
+import { PeerreviewComponent } from './peerreview/peerreview.component';
 
 
 
@@ -58,6 +61,9 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
     SubjectArticleComponent,
     SearchArticleComponent,
     HtmlSpecialPipe,
+    LibrariansComponent,
+    PlagiarismComponent,
+    PeerreviewComponent,
     
  
     

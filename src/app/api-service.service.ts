@@ -92,6 +92,14 @@ return this.http.get(this.api+`upadatecountdownload.php?id=${id}`)
    searchArticle(fdata:any){
     return this.http.post(this.api+'searchbox.php', fdata);
   }
-  
+  librarians(){
+    return this.http.get(this.api+'librarians.php');
+  }
+  peerreview(){
+    return this.http.get(this.api+'peer_review.php');
+  }
+  plagiarism(){
+    return this.http.get(this.api+'plagiarism.php');
+  }
 
   }

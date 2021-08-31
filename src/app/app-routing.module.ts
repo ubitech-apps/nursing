@@ -9,7 +9,10 @@ import { CurrentIssueComponent } from './current-issue/current-issue.component';
 import { EditorialBoardComponent } from './editorial-board/editorial-board.component';
 import { FullTextComponent } from './full-text/full-text.component';
 import { IndexBodyComponent } from './index-body/index-body.component';
+import { LibrariansComponent } from './librarians/librarians.component';
 import { PastArticleComponent } from './past-article/past-article.component';
+import { PeerreviewComponent } from './peerreview/peerreview.component';
+import { PlagiarismComponent } from './plagiarism/plagiarism.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ReferencesComponent } from './references/references.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -37,7 +40,10 @@ const routes: Routes = [
   {path:'references/:id',component:ReferencesComponent},
   {path:'past-issue/:id',component:PastArticleComponent},
   {path:'article/:id',component:SubjectArticleComponent},
-  {path:'search/:fdata',component:SearchArticleComponent}
+  {path:'search/:fdata',component:SearchArticleComponent},
+  {path:'peer-review',component:PeerreviewComponent},
+  {path:'librarians',component:LibrariansComponent},
+  {path:'plagiarism',component:PlagiarismComponent}
   
 
 

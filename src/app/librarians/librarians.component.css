@@ -1,0 +1,15 @@
+.header{
+background-color: #F59E5F7e;
+font-size: 1.5em;
+padding: 1%;
+font-weight: 600;
+border-top-color: 1px solid red;
+padding: 12px;
+font-family: "Droid Serif",serif;
+}
+.about{
+    font-family: "Droid Serif",serif;
+}
+.pm{
+    text-align: justify;
+}

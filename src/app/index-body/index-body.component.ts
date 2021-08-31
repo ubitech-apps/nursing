@@ -78,5 +78,7 @@ vau:any;
   //  console.log(fdata);
     this.Router.navigate(['search/', fdata.searchbar]);
   }
+
+
 }
  
