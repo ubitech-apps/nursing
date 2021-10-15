@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  host: 'https://ubitech.xyz/Nursing/',
-  production: false
+  host: 'https://www.tnaijournal-nji.com/',
+  production: false,
 };
 
 /*

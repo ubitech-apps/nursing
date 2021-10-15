@@ -1,4 +1,4 @@
 export const environment = {
-   host: 'https://ubitech.xyz/Nursing/',
-  production: true
+  host: 'https://www.tnaijournal-nji.com/',
+  production: true,
 };

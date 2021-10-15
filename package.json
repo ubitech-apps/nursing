@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --output-hashing=none --base-href=https://ubitech.xyz/Nursing/",
+    "build": "ng build --configuration production --output-hashing=none --base-href=https://www.tnaijournal-nji.com/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

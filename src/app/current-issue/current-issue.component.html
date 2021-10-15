@@ -1,54 +1,86 @@
 <div class="container px-lg-5 px-3">
-    <div class="border my-4 " style="background-color: #eee;">
-        <div class="header"><span class="text-dark">Current Issue</span></div>
-        <div class="m-lg-5 mx-3" *ngFor="let item of data">
-            <p>{{item.issue_no}}</p>
-            <div class="hv">
-                <h5 class="ms-1 article-type">
-                    {{item.category_name}}
-                </h5>
-                <div class="card shadow my-4" *ngFor="let items of item.data">
-                    <p>{{item.issue_no}}</p>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-10 px-3">
-
-                                <h5 class="card-text title" [innerHTML]="items.title">
-                                </h5>
-                                <span class="text-drak" style="font-size: .85em;"
-                                    *ngIf="items.authors!=''">{{items.authors}}</span><br>
-                                <span class="text-second" style="color:#777;font-size: .765em"
-                                    *ngIf="items.pages!=''">Pages:{{items.pages}}</span><br>
-                                <span style="color:#777;font-size: .765em;"><b>Published online:</b>
-                                    {{items.dates}}</span>
-                                <p class="btn-links">
-                                    <span *ngIf="items.long_desc!=''">
-                                        <a class="btn-links text-decoration-none px-1" *ngIf="items.long_desc"
-                                            (click)="abstract_data(items.article_id)">Abstract |</a>
-                                    </span>
-                                    <span *ngIf="items.full_text!=''">
-                                        <a class="btn-links text-decoration-none px-1" *ngIf="items.full_text"
-                                            (click)="full_text(items.article_id)">Full Text |</a>
-                                    </span>
-                                    <span *ngIf="items.file_url != ''">
-                                 <a class="btn-links text-decoration-none px-1" (click)=" countdownload(pdf + items.file_url, items.article_id)" *ngIf="items.file_url">PDF</a>
-                                    </span>
-                                </p>
-                            </div>
-                            <div class="col-sm-12 col-md-2  d-flex d-lg-inline justify-content-space-evenly">
-                                <p class="text-start  view-s m-0"><span class="number">{{items.view}}</span>
-                                    Views&nbsp;&nbsp;</p>
-                                <hr class="m-1">
-                                <p class="text-start  view-s m-0"><span class="number">{{items.download}}</span>
-                                    Downloads</p>
-                                <hr class="m-1">
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-                </div>
+  <div class="border my-4" style="background-color: #eee">
+    <div class="header"><span class="text-dark">Current Issue</span></div>
+    <div class="m-lg-5 mx-3" *ngFor="let item of data">
+      <p>{{ item.issue_no }}</p>
+      <div class="hv">
+        <h5 class="ms-1 article-type">
+          {{ item.category_name }}
+        </h5>
+        <div class="card shadow my-4" *ngFor="let items of item.data">
+          <p>{{ item.issue_no }}</p>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-10 px-3">
+                <h5
+                  class="card-text title"
+                  [innerHTML]="items.title | htmlSpecial"
+                ></h5>
+                <span
+                  class="text-drak"
+                  style="font-size: 0.85em"
+                  *ngIf="items.authors != ''"
+                  >{{ items.authors }}</span
+                ><br />
+                <span
+                  class="text-second"
+                  style="color: #777; font-size: 0.765em"
+                  *ngIf="items.pages != ''"
+                  >Pages:{{ items.pages }}</span
+                ><br />
+                <span style="color: #777; font-size: 0.765em"
+                  ><b>Published online:</b> {{ items.dates }}</span
+                >
+                <p class="btn-links">
+                  <span *ngIf="items.long_desc != ''">
+                    <a
+                      class="btn-links text-decoration-none px-1"
+                      *ngIf="items.long_desc"
+                      (click)="abstract_data(items.article_id)"
+                      >Abstract |</a
+                    >
+                  </span>
+                  <span *ngIf="items.full_text != ''">
+                    <a
+                      class="btn-links text-decoration-none px-1"
+                      *ngIf="items.full_text"
+                      (click)="full_text(items.article_id)"
+                      >Full Text |</a
+                    >
+                  </span>
+                  <span *ngIf="items.file_url != ''">
+                    <a
+                      class="btn-links text-decoration-none px-1"
+                      (click)="
+                        countdownload(pdf + items.file_url, items.article_id)
+                      "
+                      *ngIf="items.file_url"
+                      >PDF</a
+                    >
+                  </span>
+                </p>
+              </div>
+              <div
+                class="
+                  col-sm-12 col-md-2
+                  d-flex d-lg-inline
+                  justify-content-space-evenly
+                "
+              >
+                <p class="text-start view-s m-0">
+                  <span class="number">{{ items.view }}</span> Views&nbsp;&nbsp;
+                </p>
+                <hr class="m-1" />
+                <p class="text-start view-s m-0">
+                  <span class="number">{{ items.download }}</span> Downloads
+                </p>
+                <hr class="m-1" />
+              </div>
             </div>
+          </div>
+          <div></div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

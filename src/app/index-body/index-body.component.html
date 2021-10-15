@@ -1,6 +1,10 @@
 <!-- carousel -->
 <div class="slider">
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div
+    id="carouselExampleDark"
+    class="carousel carousel-dark slide"
+    data-bs-ride="carousel"
+  >
     <!-- <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
         aria-label="Slide 1"></button>
@@ -9,31 +13,56 @@
     </div> -->
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets/slider/TNAI.jpg"  class="d-block imgstyle w-100 mx-auto" alt="...">
-        
+        <img
+          src="assets/slider/TNAI.jpg"
+          class="d-block imgstyle w-100 mx-auto"
+          alt="..."
+        />
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="assets/slider/Banner-2.jpeg" class="d-block imgstyle w-100 mx-auto " alt="...">
-        
+        <img
+          src="assets/slider/Banner-2.jpeg"
+          class="d-block imgstyle w-100 mx-auto"
+          alt="..."
+        />
       </div>
       <div class="carousel-item">
-        <img src="assets/slider/Banner-3.jpeg"  class="d-block imgstyle w-100 mx-auto" alt="...">
-        
+        <img
+          src="assets/slider/Banner-3.jpeg"
+          class="d-block imgstyle w-100 mx-auto"
+          alt="..."
+        />
       </div>
-            <div class="carousel-item">
-              <img src="assets/slider/Banner-4.jpeg" class="d-block imgstyle w-100 mx-auto" alt="...">
-            
-            </div>
-                  <div class="carousel-item">
-                    <img src="assets/slider/Banner-5.jpeg" class="d-block imgstyle w-100 mx-auto" alt="...">
-                  
-                  </div>
+      <div class="carousel-item">
+        <img
+          src="assets/slider/Banner-4.jpeg"
+          class="d-block imgstyle w-100 mx-auto"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          src="assets/slider/Banner-5.jpeg"
+          class="d-block imgstyle w-100 mx-auto"
+          alt="..."
+        />
+      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="prev"
+    >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="next"
+    >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
@@ -43,22 +72,38 @@
   <section class="search-sec">
     <div class="newdatas">
       <form class="my-lg-1 my-1" #Search="ngForm">
-        <h1 class="text-center text-light search pt-lg-1 pt-1">Search Articles</h1>
+        <h1 class="text-center text-light search pt-lg-1 pt-1">
+          Search Articles
+        </h1>
         <div class="main">
           <div class="input-group">
-            <input class="form-control searchBar allfield" placeholder="Enter Keywords, authors, DOI,Title, etc. "
-              type="search" aria-label="Search" name="searchbar" id="searchBar" [(ngModel)]="searchbar">
+            <input
+              class="form-control searchBar allfield"
+              placeholder="Enter Keywords, authors, DOI,Title, etc. "
+              type="search"
+              aria-label="Search"
+              name="searchbar"
+              id="searchBar"
+              [(ngModel)]="searchbar"
+            />
             <div class="input-group-append">
-              <button class="btn btn-secondary searchbox" type="button" (keyup.enter)="searchs(Search.value)"
-                (click)="searchs(Search.value)">
+              <button
+                class="btn btn-secondary searchbox"
+                type="button"
+                (keyup.enter)="searchs(Search.value)"
+                (click)="searchs(Search.value)"
+              >
                 <i class="fa fa-search" style="font-size: x-large"></i>
               </button>
             </div>
           </div>
         </div>
       </form>
-      <div class="py-lg-1 my-lg-1 my-1 text-center fs-3 text-white" style="font-family: Droid Serif">
-        {{vau?.total}} articles
+      <div
+        class="py-lg-1 my-lg-1 my-1 text-center fs-3 text-white"
+        style="font-family: Droid Serif"
+      >
+        {{ vau?.total }} articles
       </div>
     </div>
   </section>
@@ -95,63 +140,65 @@
   </div>
 
 </div> -->
-  <div class="b">
-    <p class="text-uppercase text-center my-0 blues fs-lg-5 fs-6">India's oldest Nursing journal with more than 100 years
-      of legacy
-    </p>
-  </div>
+<div class="b">
+  <p class="text-uppercase text-center my-0 blues fs-lg-5 fs-6">
+    India's oldest Nursing journal with more than 100 years of legacy
+  </p>
+</div>
 <div class="gery"></div>
 <div class="triangles">
   <div class="triangle-2"></div>
 </div>
-<div style="background-color: #336699;">
+<div style="background-color: #336699">
   <div class="container py-5 mtt-34 text-center">
     <h4 class="text-capitalize my-3 pb-3 text-light">
       Learn how we support you
     </h4>
-    <div class="row pb-4 " style="background-color: #336699;">
+    <div class="row pb-4" style="background-color: #336699">
       <div class="col-md-3 col-sm-12 col-lg-3 side-border">
-      <a class="text-decoration-none"  routerLink="/librarians">
-          <div class="" style="background-color: #336699;">
+        <a class="text-decoration-none" routerLink="/librarians">
+          <div class="" style="background-color: #336699">
             <h5 class="text-capitalize text-light mt-3">librarians</h5>
-            <p class="text-lights fs-5 m-3">Connect with our world class journal.</p>
-          </div>
-      </a>
-      </div>
-      <div class="col-md-3 col-sm-12 col-lg-3 side-border">
-       <a class="text-decoration-none " routerLink="/authors-guidelines">
-          <div class="" style="background-color: #336699;">
-            <h5 class="text-capitalize text-light">authors</h5>
-            <p class="text-lights fs-5 p-2">Publish your research. Enhance your career.</p>
-          </div>
-       </a>
-      </div>
-      <div class="col-md-3 col-sm-12 col-lg-3 side-border">
-       <a class="text-decoration-none " routerLink="/plagiarism">
-          <div class="" style="background-color: #336699;">
-            <h5 class="text-capitalize text-light">plagiarism</h5>
-            <p class="text-lights fs-5 p-2">Manuscript submitted will be checked for originality using anti-plagiarism
-              software</p>
-          
-          </div>
-       </a>
-      </div>
-      <div class="col-md-3 col-sm-12 col-lg-3 ">
-        <a class="text-decoration-none"  routerLink="/peer-review">
-          <div class="" style="background-color: #336699;">
-            <h5 class="text-capitalize text-light">peer review</h5>
-            <p class="text-lights fs-5 p-2">Text to be given by TNAI</p>
-          
+            <p class="text-lights fs-5 m-3">
+              Connect with our world class journal.
+            </p>
           </div>
         </a>
       </div>
-
+      <div class="col-md-3 col-sm-12 col-lg-3 side-border">
+        <a class="text-decoration-none" routerLink="/authors-guidelines">
+          <div class="" style="background-color: #336699">
+            <h5 class="text-capitalize text-light">authors</h5>
+            <p class="text-lights fs-5 p-2">
+              Publish your research. Enhance your career.
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3 col-sm-12 col-lg-3 side-border">
+        <a class="text-decoration-none" routerLink="/plagiarism">
+          <div class="" style="background-color: #336699">
+            <h5 class="text-capitalize text-light">plagiarism</h5>
+            <p class="text-lights fs-5 p-2">
+              Manuscript submitted will be checked for originality using
+              anti-plagiarism software
+            </p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3 col-sm-12 col-lg-3">
+        <a class="text-decoration-none" routerLink="/peer-review">
+          <div class="" style="background-color: #336699">
+            <h5 class="text-capitalize text-light">peer review</h5>
+            <p class="text-lights fs-5 p-2">Text to be given by TNAI</p>
+          </div>
+        </a>
+      </div>
     </div>
-
   </div>
 </div>
 <div class="gery"></div>
-<div class="triangles" >
+<div class="triangles">
   <div class="triangle-2"></div>
 </div>
 <!-- <div class="container text-lg-start text-center">
@@ -174,36 +221,51 @@
     </div>
   </div>
 </div> -->
-<div style="background-color: #eee;">
+<div style="background-color: #eee">
   <div class="container">
     <div class="row">
       <h2 class="text-center fw-bold my-4">Trending Articles</h2>
-      <div class="e" >
-       
+      <div class="e">
         <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
           <div class="col" *ngFor="let item of datas">
-             {{item.view}}
+            {{ item.view }}
             <div class="card h-100">
-              <div class="card-header card-headers"></div>
-              <img [src]="img+item.graphic" style="height: 200px;" class="img-fluid img-thumbnail my-2" alt="..." />
+              <div class="card-header">
+                <ng-container
+                  *ngIf="item.graphic; then img; else noimg"
+                ></ng-container>
+                <ng-template #img>
+                  <img
+                    [src]="img + item.graphic"
+                    style="height: 200px"
+                    class="img-fluid img-thumbnail my-2"
+                  />
+                </ng-template>
+                <ng-template #noimg>
+                  <img
+                    src="assets/article_img/no_image.jpg"
+                    style="height: 200px"
+                    class="img-fluid img-thumbnail my-2"
+                  />
+                </ng-template>
+              </div>
               <div class="card-body">
-           
-                <a class="card-text text-color text-color text-decoration-none" (click)="abstract_data(item.article_id)" style="margin: 0px; cursor: pointer;" [innerHTML]="item.title">
-                 <span class="px-2"><i class="fa fa-angle-right"></i></span>
+                <a
+                  class="card-text text-color text-color text-decoration-none"
+                  (click)="abstract_data(item.article_id)"
+                  style="margin: 0px; cursor: pointer"
+                  [innerHTML]="item.title | htmlSpecial"
+                >
+                  <span class="px-2"><i class="fa fa-angle-right"></i></span>
                 </a>
 
-                <hr style="margin: 0px;" />
+                <hr style="margin: 0px" />
                 <div>
-                  <span class="text-secondary">{{item.authors}}
-                  </span>
+                  <span class="text-secondary">{{ item.authors }} </span>
                 </div>
               </div>
             </div>
-
           </div>
-        
-    
-
         </div>
       </div>
     </div>
