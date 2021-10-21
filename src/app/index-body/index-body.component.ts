@@ -75,10 +75,16 @@ export class IndexBodyComponent implements OnInit {
   }
   abstract_data(id: any) {
     this.Router.navigate(['abstract/' + id]);
+    this.countview(id);
   }
 
   searchs(fdata: any) {
     //  console.log(fdata);
     this.Router.navigate(['search/', fdata.searchbar]);
+  }
+  countview(id: any) {
+    this.api.countview(id).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

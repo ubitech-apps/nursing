@@ -190,7 +190,11 @@
         <a class="text-decoration-none" routerLink="/peer-review">
           <div class="" style="background-color: #336699">
             <h5 class="text-capitalize text-light">peer review</h5>
-            <p class="text-lights fs-5 p-2">Text to be given by TNAI</p>
+            <p class="text-lights fs-5 p-2">
+              Peer review is a systematic and rigorous approach to acknowledge
+              the evidence of reliability and validity of literature for the
+              readers.
+            </p>
           </div>
         </a>
       </div>
@@ -230,7 +234,7 @@
           <div class="col" *ngFor="let item of datas">
             {{ item.view }}
             <div class="card h-100">
-              <div class="card-header">
+              <!-- <div class="card-header">
                 <ng-container
                   *ngIf="item.graphic; then img; else noimg"
                 ></ng-container>
@@ -248,7 +252,7 @@
                     class="img-fluid img-thumbnail my-2"
                   />
                 </ng-template>
-              </div>
+              </div> -->
               <div class="card-body">
                 <a
                   class="card-text text-color text-color text-decoration-none"

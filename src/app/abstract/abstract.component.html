@@ -100,6 +100,7 @@
                 class="text-decoration-none linkgs"
                 [href]="pdf + items.file_url"
                 target="_new"
+                (click)="countdownload(items.article_id)"
                 ><i class="fa fa-download px-1"></i>Download PDF</a
               >
             </li>
@@ -154,7 +155,7 @@
                   [theme]="'circles-dark'"
                   [include]="['facebook', 'twitter', 'copy']"
                   [url]="
-                    'https://ubitech.xyz/Nursing/abstract/' +
+                    'https://www.tnaijournal-nji.com/abstract/' +
                     items.article_id +
                     items.title
                   "
