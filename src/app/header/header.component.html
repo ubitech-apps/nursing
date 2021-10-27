@@ -1,38 +1,63 @@
 <div style="background-color: #fff">
-  <div class="container-fluid" style=" border-bottom: 2px solid #336699;">
+  <div class="container-fluid" style="border-bottom: 2px solid #336699">
     <div class="row">
-    <div class=" col-md" id="first">
-    <a  class="fs-4 px-lg-5 px-1 d-flex text-decoration-none" routerLink="/">
-        <img class="logo_img" src="assets/logo.png" alt="" />
-        <p class="fs-5 lh-sm mt-4 text-nowrap" style="color:#336699;font-weight: 500;">The Nursing Journal of India<br> <span
-            class="fs-6 fst-italic">(TNJI-Since 1910)</span></p>
-    </a>
-    </div>
-    <div class="mt-4 px-2 px-lg-5 col-md" id="second">
-      <a  [href]="admin_path" target="_blank" class="px-3 mt-5" style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px"><i
-          class="fa fa-user pe-2 fs-5" style="color:#336699;"></i>Log in</a>
-      <span style="color:#336699;">|</span>
-      <a routerLink="/registration" class=" px-3 mt-5"
-        style="text-decoration: none;color:#336699; font-weight: 500; font-size: 16px">Register</a>
-    
-      <input type="checkbox" id="active" />
-      <label for="active" class="menu-btn">
-        <i class="fa fa-bars" style="color:#336699;"></i>
-      </label>
-      <div class="wrapper">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a  href="about">About us</a></li>
-          <li><a href="current-issue">Current Issue</a></li>
-          <li><a href="archive">Archives</a></li>
-          <li><a href="authors-guidelines">Authors Guidelines</a></li>
-          <li><a href="editorial-board">Editorial Board</a></li>
-          <li><a href="submitmanuscript">Submit Manuscript</a></li>
-          <li><a href="contact">Contact us</a></li>
-        </ul>
+      <div class="col-md" id="first">
+        <a class="fs-4 px-lg-5 px-1 d-flex text-decoration-none" routerLink="/">
+          <img class="logo_img" src="assets/logo.png" alt="" />
+          <p
+            class="fs-5 lh-sm mt-4 text-nowrap"
+            style="color: #336699; font-weight: 500"
+          >
+            The Nursing Journal of India<br />
+            <span class="fs-6 fst-italic">(TNJI-Since 1910)</span>
+          </p>
+        </a>
+      </div>
+      <div class="mt-4 px-2 px-lg-5 col-md" id="second">
+        <!-- <a
+          [href]="admin_path"
+          target="_blank"
+          class="px-3 mt-5"
+          style="
+            text-decoration: none;
+            color: #336699;
+            font-weight: 500;
+            font-size: 16px;
+          "
+          ><i class="fa fa-user pe-2 fs-5" style="color: #336699"></i>Log in</a
+        >
+        <span style="color: #336699">|</span>
+        <a
+          routerLink="/registration"
+          class="px-3 mt-5"
+          style="
+            text-decoration: none;
+            color: #336699;
+            font-weight: 500;
+            font-size: 16px;
+          "
+          >Register</a
+        > -->
+
+        <input type="checkbox" id="active" />
+        <label for="active" class="menu-btn">
+          <i class="fa fa-bars" style="color: #336699"></i>
+        </label>
+        <div class="wrapper">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About us</a></li>
+            <li><a href="current-issue">Current Issue</a></li>
+            <li><a href="archive">Archives</a></li>
+            <li><a href="authors-guidelines">Authors Guidelines</a></li>
+            <li><a href="editorial-board">Editorial Board</a></li>
+            <li><a href="submitmanuscript">Submit Manuscript</a></li>
+            <li><a href="contact">Contact us</a></li>
+            <li><a [href]="admin_path" target="_blank">Log in</a></li>
+            <li><a href="registration">Register</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    </div>
-
   </div>
 </div>
